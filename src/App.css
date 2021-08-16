@@ -1,38 +1,295 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --hyundai-blue: #002c7b;
+  --item-color: rgb(216, 216, 216);
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+.menu-header{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--hyundai-blue);
+  height: 80px;
+}
+
+.menu-header .dalton-logo{
+  margin-left: 30px;
+  width: 90px;
+  height: 40px;
+  background-image: url('https://angelesdalton.com.mx/img/logo-white.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.menu-header nav ul{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.menu-header nav li{
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-header .monitor a{
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  background-image: url('https://i.ibb.co/484CnWp/menu-hamburguer.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.menu-header nav a{
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.menu-header nav .add, .menu-header nav .monitor{
+  display: none;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--hyundai-blue);
+  height: 90px;
+  background-image: url('https://i.ibb.co/NTK0S2c/hyundai-panoramic.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title h2{
+  color: #fff;
+}
+
+.add-policy-form{
+  width: 90%;
+  margin: 20px auto 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+
+.add-policy-form div{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-policy-form div input{
+  text-align: center;
+  width: 100%;
+  height: 2.4rem;
+  border-radius: .8rem;
+  outline: none;
+  border: 2px solid #c5c5c5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.add-policy-form div input:focus{
+  box-shadow: 0 4px 6px rgba(175, 175, 175, 0.911);
+  border: none;
+}
+
+.add-policy-form div p{
+  padding: 10px;
+}
+
+.monitor-container{
+  width: 90%;
+  margin: 30px auto;
+}
+
+.monitor-container .monitor-container-item{
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: 2fr 4fr 4fr 1fr;
+  background-color: var(--item-color);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px 0;
+  height: 40px;
+}
+
+.monitor-container .title-bar p{
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.monitor-container-item .name-button{
+  display: none;
+  background-color: var(--item-color);
+  outline: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.monitor-container div p{
+  place-self: center;
+  font-size: 1.2rem;
+}
+
+.buttons-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.buttons-container button{
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  place-self: center;
+}
+
+.buttons-container :hover{
+  width: 3rem;
+  height: 3rem;
+}
+
+.buttons-container .edit-button{
+  background-image: url('https://i.ibb.co/M6r0vnY/edit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.buttons-container .delete-button{
+  background-image: url('https://i.ibb.co/dkHWVGp/trash.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.loader{
+  height: 10rem;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7a/Ajax_loader_metal_512.gif');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.submit{
+  padding: 1.6rem;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-weight: 700;
+  background-color: var(--hyundai-blue);
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+}
+
+.submit:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(87, 84, 84, 0.911);
+}
+
+
+
+@media (max-width: 1000px) {
+  .add-policy-form{
+    width: 80%;
+  }
+
+  .monitor-container .monitor-container-item .monitor-container-item-salesman{
+    display: none;
+  }
+
+  .monitor-container .monitor-container-item{
+    grid-template-columns: 2fr 4fr 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 800px) {
+  .add-policy-form{
+    width: 95%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submit{
+    grid-column: 1 / 3;
+    margin-bottom: 30px;
+  }
+
+  .menu-header nav a{
+    font-size: 1.4rem;
+  }
+
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 600px) {
+  .monitor-container-item-policy{
+    display: none;
+  }
+  .monitor-container .monitor-container-item{
+    grid-template-columns: 4fr 1fr;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 500px) {
+  .add-policy-form{
+    width: 90%;
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-header nav .add, .menu-header nav .monitor{
+    display: flex;
+    align-items: center;
+  }
+
+  .monitor-container-item .name-button{
+    display: block;
+    width: 100%;
+  }
+
+  .monitor-container .monitor-container-item{
+    display: block;
+    padding: 0;
+  }
+  .monitor-container-item-policy, .monitor-container-item-name, .monitor-container-item-salesman, .buttons-container{
+    display: none;
+  }
+
+  .menu-header nav a{
+    font-size: 5rem;
+  }
+
+  .menu-header nav .to-add-policy, .menu-header nav .to-monitor{
+    display: none;
+  }
+
+  .submit{
+    grid-column: 1 / 2;
+    margin-bottom: 30px;
   }
 }
+
