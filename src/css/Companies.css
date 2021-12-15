@@ -1,0 +1,35 @@
+.companies{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.companies *{
+    text-align: center;
+}
+
+.companies-title{
+    padding: 2rem;
+}
+
+.companies-form{
+    padding: 1rem;
+}
+
+.companies-form button{
+    margin: 1rem;
+}
+
+.companies-list{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.companies-list-item{
+    margin: .5rem;
+    background-color: var(--item-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+    height: 3rem;
+    border-radius: 1rem;
+}

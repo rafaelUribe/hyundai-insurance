@@ -1,0 +1,22 @@
+.collection-menu-nav{
+    width: 100%;
+    background-color: var(--dark-grey);
+}
+
+.collection-menu-nav .nav-ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.collection-menu-nav a{
+    display: block;
+    text-decoration: none;
+    color: var(--item-color);
+    padding: .5rem;
+}
+
+.collection-menu-nav a:hover{
+    color: var(--hyundai-blue);
+}

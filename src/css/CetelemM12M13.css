@@ -1,0 +1,236 @@
+.cetelem-m12{
+    max-width: 600px;
+    margin: 0 auto 10rem;
+}
+
+.cetelem-m12 *{
+    text-align: center;
+}
+
+.cetelem-m12-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.cetelem-m12-policy-numbers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+}
+
+.cetelem-m12-policy-numbers div{
+    min-width: 250px;
+}
+
+
+.cetelem-m12-policy-numbers input{
+    width: 100%;
+    text-align: center;
+}
+
+.cetelem-m12-broker-selection-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cetelem-m12-company-selection{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.m12-company{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--item-color);
+    cursor: pointer;
+    border: none;
+}
+
+.m12-company-selected{
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--dark-grey);
+    color: white;
+    cursor: pointer;
+}
+
+.m12-company:hover, .m12-company:focus{
+    box-shadow: 0 6px 8px var(--dark-grey);
+    border: none;
+    outline: none;
+}
+
+.cetelem-m12-order{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cetelem-m12-salesman{
+    margin-top: 3rem;
+    display: grid;
+    place-items: center;
+}
+
+.cetelem-m12-salesman *{
+    text-align: center;
+}
+
+.cetelem-m12-salesman-input{
+    width: 90%;
+}
+
+.cetelem-m12-salesman-input input{
+    width: 100%;
+}
+
+.cetelem-m12-salesman-search{
+    margin-top: 1rem;
+    display: grid;
+}
+
+.cetelem-m12-salesman-item {
+    margin-top: 1rem;
+}
+
+.cetelem-m12-car{
+    margin-top: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+.cetelem-m12-car div{
+    margin-top: 1rem;
+}
+
+.cetelem-m12-car-name input{
+    width: 300px;
+}
+
+.cetelem-m12-car *{
+    text-align: center;
+}
+
+.cetelem-m12-car-vin input{
+    width: 300px;
+}
+
+.vin-alert{
+    margin-top: 1rem;
+    color: red;
+}
+
+.cetelem-m13-term-container{
+    width: 150px;
+    margin: 2rem auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cetelem-m13-term-container button{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.cetelem-m13-term-selected{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cetelem-m13-term-selected button{
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    background-color: var(--dark-grey);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+.cetelem-m13-term-selected button:focus{
+    box-shadow: 0 6px 8px var(--dark-grey);
+}
+
+.cetelem-m13-term-title{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m12-price div{
+    margin: 1rem auto;
+    display: grid;
+    place-items: center;
+}
+
+.m12-date{
+    margin: 2rem auto;
+}
+
+.m12-date-container{
+    margin: 2rem auto;
+}
+
+
+.m12-day-buttons, .m12-month-buttons{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m12-day-buttons button{
+    margin: 1rem 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.m12-day-selected{
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.m12-day-selected:focus{
+    box-shadow: 0 6px 8px var(--dark-grey);
+}
+
+.m12-month-buttons div{
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.m12-month-buttons button{
+    border: none;
+    width: 15rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}   
+
+.m12-month-selected{
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.m12-month-selected:focus{
+    box-shadow: 0 6px 8px var(--dark-grey);
+}

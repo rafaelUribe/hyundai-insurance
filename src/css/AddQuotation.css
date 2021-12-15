@@ -1,0 +1,156 @@
+.quotation{
+  padding: 1rem;
+}
+
+.quotation-form{
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.quotation-form input{
+  width: 100%;
+}
+
+.quotation-salesman-div{
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.quotation-salesman-div div *{
+  margin-top: 1rem;
+}
+
+.options-div{
+  position: absolute;
+  top: 4.5rem;
+  width: 100%;
+}
+
+.options-div{
+  background-color: #D9DADF;
+}
+
+.options-div-option{
+  background-color: white;
+  margin: .5rem;
+  border-radius: .5rem;
+  text-indent: 1rem;
+}
+
+.options-div-option:hover{
+  background-color: var(--hyundai-blue);
+  color: #D9DADF;
+  cursor: pointer;
+  margin: .5rem;
+  border-radius: .5rem;
+  text-indent: 1rem;
+}
+
+.team-div{
+  margin-bottom: 1rem;
+}
+
+.customer-div{
+  margin-bottom: 1rem;
+}
+
+.origin-div{
+  padding: 2rem;
+}
+
+.operation-container{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--item-color);
+  justify-content: center;
+  margin: 2rem 0;
+  border-radius: 1rem;
+}
+
+.operation-container button{
+  display: block;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  margin: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.origin-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.origin-buttons button{
+  padding: 1rem;
+  border: 2px solid #ccc;
+  margin: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.origin-selection div{
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  margin: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--hyundai-blue);
+  color: #ccc;
+}
+
+.operation-container button:hover{
+  box-shadow: 0px 4px 6px #ccc;
+  background-color: var(--hyundai-blue);
+  color: white;
+}
+
+.origin-buttons button:hover{
+  box-shadow: 0px 4px 6px #ccc;
+  background-color: var(--hyundai-blue);
+  color: white;
+}
+
+.quotation-data{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.phone-div
+
+.quotation-data .zip-code-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.zip-code-div button{
+  margin: 1rem;
+}
+
+.commentary-div{
+  margin-top: 2rem;
+}
+
+.submit-div{
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 500px) {
+  .quotation-data{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

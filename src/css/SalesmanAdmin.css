@@ -1,0 +1,70 @@
+.salesman-admin-title{
+    padding: 1rem;
+}
+
+.salesman-form{
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.inputs, .salesman-buttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.inputs div{
+    display: grid;
+    place-items: center;
+    gap: .5rem;
+}
+
+.inputs input{
+    text-align: center;
+    width: 100%;
+}
+
+.salesman-buttons{
+    padding: 2rem;
+}
+
+.salesman-monitor{
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.salesman-monitor-list-container div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    gap: 1rem;
+    place-items: center;
+}
+
+.salesman-list-header{
+    background-color: transparent;
+}
+
+.salesman-monitor-list-container .item{
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--item-color);
+    border-radius: 1rem;
+}
+
+.salesman-monitor *{
+    text-align: center;
+}
+
+@media (min-width: 500px){
+    .salesman-monitor-list-container div{
+        grid-template-columns: 4fr 4fr 1fr 1fr;
+    }
+
+    .inputs, .salesman-buttons{
+        grid-template-columns: 1fr 1fr;
+    }
+}

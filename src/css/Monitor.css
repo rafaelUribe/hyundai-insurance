@@ -1,0 +1,99 @@
+.monitor *{
+    font-size: 1.2rem;
+}
+
+.monitor-search-bar{
+    padding: 2rem 2rem 0;
+    max-width: 30rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: .5rem;
+    place-items: center;
+}
+
+.monitor-search-bar .monitor-search-bar-input-container{
+    width: 100%;
+}
+
+.monitor-search-bar .monitor-search-bar-input-container input{
+    width: 100%;
+}
+
+.monitor-container{
+    padding: 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    display: grid;
+    gap: .5rem;
+}
+
+.monitor-container .title-bar{
+    background-color: transparent;
+}
+
+.monitor-container-item{
+    padding: .5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr 1.5fr .5fr;
+    min-height: 1.8rem;
+    background-color: var(--item-color);
+    font-size: 1rem;
+}
+
+.buttons-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    place-items: center;
+}
+
+.loader{
+    width: 100%;
+    height: 8rem;
+    background-image: url('https://c.tenor.com/8KWBGNcD-zAAAAAC/loader.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.875);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    top: 50%;
+    width: 200px;
+    height: 100px;
+    left: calc(50% - 160px);
+}
+
+.overlay-box h4{
+    color: white;
+    grid-column: 1 / 3;
+}
+
+.add-policy .cancel-edition-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 500px){
+    .monitor-container-item{
+        grid-template-columns: 1fr;
+    }
+}

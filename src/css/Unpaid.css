@@ -1,0 +1,158 @@
+.unpaid{
+    position: relative;
+    width: 95%;
+    height: 1000px;
+    min-width: 300px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+.unpaid-title{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unpaid-search{
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.unpaid-search input{
+    text-align: center;
+}
+
+.unpaid-list{
+    padding: 2rem 0;
+}
+
+.unpaid-list *{
+    font-size: 1rem;
+}
+
+.unpaid-item, .unpaid-list-header{
+    display: grid;
+    padding: 0 1rem;
+    align-items: center;
+    margin-top: .5rem;
+    gap: 1rem;
+    grid-template-columns: 1fr 1.8fr 1.5fr .6fr;
+}
+
+.unpaid-list-header-right{
+    text-align: center;
+}
+
+.unpaid-item{
+    background-color: var(--item-color);
+    padding: .5rem;
+}
+
+.unpaid-item-buttons{
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.unpaid-item-buttons button{
+    padding: .4rem .1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.unpaid-item button:hover{
+    box-shadow: 0 4px 6px var(--dark-grey);
+}
+
+.unpaid-direct{
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.unpaid-direct:hover{
+    background-color: var(--hyundai-blue);
+}
+
+.unpaid-dealer{
+    background-color: yellow;
+    border: none;
+}
+
+.unpaid-dealer:hover{
+    background-color: var(--hyundai-blue);
+    color: #fff;
+}
+
+.unpaid-send-back{
+    display: flex;
+    justify-content: center;
+}
+
+.unpaid-send-back button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+
+.unpaid-send-back button:hover{
+    cursor: pointer;
+    box-shadow: none;
+    color: yellow;
+}
+
+.unpaid-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(1, 1, 1, 0.881);
+}
+
+.unpaid-overlay-form{
+    width: 300px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.unpaid-overlay *{
+    color: white;
+}
+
+.unpaid-overlay input{
+    background-color: var(--dark-grey);
+    text-align: center;
+    border: 1px solid var(--item-color);
+}
+
+.unpaid-overlay input:focus{
+    outline: none;
+}
+
+.unpaid-overlay p{
+    color: red;
+    text-align: center;
+    height: 2rem;
+}
+
+.unpaid-overlay-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.unpaid .unpaid-overlay-cancel{
+    background-color: var(--item-color);
+    color: black;
+}

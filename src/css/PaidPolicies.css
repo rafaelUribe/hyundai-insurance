@@ -1,0 +1,65 @@
+.paid{
+    max-width: 800px;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.paid-loader{
+    display: grid;
+    place-items: center;
+    padding: 5rem;
+}
+
+.paid-loader p{
+    font-size: 3rem;
+}
+
+.paid-date{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.paid-search{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.paid-search input{
+    text-align: center;
+}
+
+.paid-list-head, .paid-list-item{
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+}
+
+.paid-list-item:hover{
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.paid-date-search-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.paid-search{
+    margin-bottom: 2rem;
+}
+
+.paid-list-back-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.paid-list-back-button:hover{
+    background-color: var(--dark-grey);
+    color: white;
+}

@@ -1,0 +1,86 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    background-color: var(--hyundai-blue);
+    height: 60px;
+}
+
+.dalton-logo{
+    width: 100px;
+    height: 50px;
+    background-image: url('https://angelesdalton.com.mx/img/logo-white.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu-button{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.menu-nav-desktop{
+    display: flex;
+    padding: .5rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: var(--dark-grey);
+}
+
+.menu-nav-desktop a, .menu-nav-mobile a{
+    text-decoration: none;
+}
+
+.menu-nav-desktop a{
+    color: white;
+}
+
+.menu-nav-mobile a{
+    color: black;
+}
+
+.carousel{
+    display: block;
+    width: 100%;
+}
+
+.menu-nav-mobile{
+    width: 100%;
+    display: flex;
+    background-color: var(--dark-grey);
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.menu-nav-mobile div{
+    scroll-snap-align: center;
+    flex: 1 0 80px;
+    background-color: var(--item-color);
+    margin: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 500px){
+    .menu-nav-desktop{
+        display: none;
+    }
+}
+
+@media (min-width: 500px){
+    .menu-nav-mobile{
+        display: none;
+    }
+}
+

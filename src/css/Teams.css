@@ -1,0 +1,31 @@
+.teams{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.teams *{
+    text-align: center;
+}
+
+.teams-title{
+    padding: 2rem;
+}
+
+.team-form{
+    padding: 1rem;
+}
+
+.team-list{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.team-list-item{
+    margin: .5rem;
+    background-color: var(--item-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+    height: 3rem;
+    border-radius: 1rem;
+}

@@ -1,28 +1,76 @@
-import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
-    return (
-        <div className='menu-header'>
-            <div className='dalton-logo'>
+    const [displayMenu, setDisplayMenu] = useState(false)
 
+    const toggleMenu = () => {
+        displayMenu? setDisplayMenu(false) : setDisplayMenu(true)
+    }
+
+    return (
+        <div className='menu'>
+            <section className='header'>
+                <div className='dalton-logo'>
+
+                </div>
+                <div className='show-menu-button mobile-visible'>
+                    <button className='menu-button' onClick={toggleMenu}>
+                        Menú
+                    </button>
+                </div>           
+            </section>
+            <div className='menu-nav-desktop desktop-visible'>               
+                    <div className='to-add-policy'>
+                        <Link to='/AddPolicy' >Nueva poliza</Link>
+                    </div>
+                    <div>
+                        <Link to='/Cetelem'>Cetelem</Link>
+                    </div>
+                    <div className='to-monitor'>
+                        <Link to='/Monitor' >Monitor</Link>
+                    </div>
+                    <div className='to-quotation'>
+                        <Link to='/AddQuotation'>Cotizacion</Link>
+                    </div>
+                    <div className='to-collection'>
+                        <Link to='/Collection'>Cobranza</Link>
+                    </div>
+                    <div className='to-admin'>
+                        <Link to='/Admin'>Admin</Link>
+                    </div>
             </div>
-            <nav>
-                <ul>
-                    <li className='add'>
-                        <Link to='/addPolicy'>+</Link>
-                    </li>
-                    <li className='monitor'>
-                        <Link to='/monitor' ></Link>
-                    </li>
-                    <li className='to-add-policy'>
-                        <Link to='/addPolicy' >Nueva poliza</Link>
-                    </li>
-                    <li className='to-monitor'>
-                        <Link to='/monitor' >Monitor</Link>
-                    </li>
-                </ul>
-            </nav>
+            {
+                displayMenu?
+                    (
+                        <div className='carousel'>
+                            <div className='menu-nav-mobile mobile-visible'>
+                                <div className='to-add-policy' onClick={toggleMenu}>
+                                    <Link to='/AddPolicy' >Nueva poliza</Link>
+                                </div>
+                                <div onClick={toggleMenu}>
+                                    <Link to='/Cetelem'>Cetelem</Link>
+                                </div>
+                                <div className='to-monitor' onClick={toggleMenu}>
+                                    <Link to='/Monitor' >Monitor</Link>
+                                </div>
+                                <div className='to-quotation' onClick={toggleMenu}>
+                                    <Link to='/AddQuotation'>Cotizacion</Link>
+                                </div>
+                                <div className='to-collection' onClick={toggleMenu}>
+                                    <Link to='/Collection'>Cobranza</Link>
+                                </div>
+                                <div className='to-admin' onClick={toggleMenu}>
+                                    <Link to='/Admin'>Admin</Link>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                    :
+                    (   
+                        <span></span>
+                    )
+            }
         </div>
     )
 }

@@ -1,0 +1,153 @@
+.unregistered{
+    position: relative;
+    width: 95%;
+    height: 1000px;
+    min-width: 300px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.unregistered-title{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unregistered-search{
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.unregistered-search input{
+    text-align: center;
+}
+
+.unregistered-list{
+    padding: 2rem 0;
+}
+
+.unregistered-list *{
+    font-size: 1.2rem;
+}
+
+.unregistered-item, .unregistered-list-header{
+    display: grid;
+    padding: 0 1rem;
+    align-items: center;
+    margin-top: .5rem;
+    gap: 1rem;
+    grid-template-columns: 2fr 4fr 1.5fr 1fr;
+}
+
+.unregistered-item{
+    background-color: var(--item-color);
+}
+
+.unregistered-policy-button{
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--hyundai-blue);
+    cursor: pointer;
+}
+
+.unregistered-policy-button:hover{
+    color: green;
+}
+
+.unregistered-item-buttons{
+    display: grid;
+    place-items: center;
+}
+
+.unregistered-item-buttons button{
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: green;
+}
+
+.unregistered-item-buttons button:hover{
+    color: yellow;
+}
+
+.unregistered-overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.901);
+}
+
+.unregistered-overlay *{
+    color: white;
+}
+
+.unregistered-overlay-policy-container{
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    place-items: center;
+}
+
+/* .unregistered-overlay-policy-container *{
+    border: 1px solid white
+} */
+
+/* POLICY DATA */
+
+.unregistered-overlay-type-of{
+    grid-column: 1 / 3;
+}
+
+.unregistered-overlay-policy-number{
+    grid-column: 3 / 5;
+}
+
+.unregistered-overlay-policy-customer{
+    grid-column: 1 / 4;
+}
+
+.unregistered-overlay-policy-vin{
+    grid-column: 1 / 3;
+}
+
+.unregistered-overlay-negotiation{
+    grid-column: 1 / 3;
+}
+
+.unregistered-overlay-policy-salesman-code{
+    grid-column: 1 / 2;
+}
+
+.unregistered-overlay-policy-salesman-name{
+    grid-column: 2 / 5;
+}
+
+.uregistered-overlay-policy-obs{
+    grid-column: 1 / 3;
+}
+
+.unregistered-overlay-ok{
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.unregistered-overlay-ok:hover{
+    border: 1px solid var(--item-color);
+    background-color: var(--item-color);
+    color: black;
+    border-radius: .5rem;
+    cursor: pointer;
+
+}
+

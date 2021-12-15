@@ -1,0 +1,88 @@
+.forschedule{
+    width: 95%;
+    height: 1000px;
+    min-width: 300px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.forschedule-title{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forschedule-search{
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.forschedule-search input{
+    text-align: center;
+}
+
+.forschedule-list{
+    padding: 2rem 0;
+}
+
+.forschedule-list *{
+    font-size: 1.2rem;
+}
+
+.forschedule-item, .forschedule-list-header{
+    display: grid;
+    padding: 0 1rem;
+    align-items: center;
+    margin-top: .5rem;
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr 1fr 1fr .8fr;
+}
+
+.forschedule-list-header-alignc{
+    text-align: center;
+}
+
+.forschedule-item{
+    background-color: var(--item-color);
+    height: 2.5rem;
+}
+
+.forschedule-item-buttons{
+    display: grid;
+    gap: .5rem;
+}
+
+.forschedule-item button:hover{
+    box-shadow: 0 4px 6px var(--dark-grey);
+}
+
+.forschedule-schedule{
+    padding: .2rem .5rem;
+    background-color: green;
+    color: white;
+    border: none;
+    margin: 0 auto;
+    place-self: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.forschedule-send-back{
+    display: flex;
+    justify-content: center;
+}
+
+.forschedule-send-back button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.forschedule-send-back button:hover{
+    box-shadow: none;
+    color: yellow;
+}
