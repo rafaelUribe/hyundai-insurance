@@ -9,23 +9,34 @@ const CetelemM12M13 = () => {
     const [selectedCompany, setSelectedCompany] = useState('')
     const [order, setOrder] = useState('')
 
+    const [customer, setCustomer] = useState('')
+
     const [salesman, setSalesman] = useState('')
     const [salesForce, setSalesForce] = useState(null)
     const [matchingSalesForce, setMatchingSalesForce] = useState(null)
 
+    const cyear = new Date()
+    const cy = cyear.getFullYear()
+
     const [car, setCar] = useState('')
-    const [carYear, setCarYear] = useState(new Date().getFullYear())
+    const [carYear, setCarYear] = useState(cy + 1)
     const [vin, setVin] = useState('')
 
     const [term, setTerm] = useState('')
 
+    const [finalPriceM12, setFinalPriceM12] = useState('')
+    const [finalPriceM13, setFinalPriceM13] = useState('')
+    const [expenditures, setExpenditures] = useState(600)
+
     const today = new Date()
     const this_month = today.getMonth()
+    const this_year = today.getFullYear()
     const last_month = this_month - 1
     const next_month = this_month + 1
 
     const [m12Day, setM12Day] = useState('')
     const [m12Month, setM12Month] = useState('')
+    const [m12Year, setM12Year] = useState('')
 
     const months = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']
 
@@ -81,11 +92,71 @@ const CetelemM12M13 = () => {
         console.log('hoy:', today, 'este mes', this_month)
     }, [])
 
-    const createDate = date_input => {
-        const splited_components = date_input.split('-')
-        const parsed = date_input.split
-        // const d = new Date(reversed)
-        // console.log(d)
+    const savePolicy = async (e) => {
+        const m12policy = {
+            policyN: m12,
+            broker: broker,
+            insuranceCompany: selectedCompany,
+            name: customer,
+            operation: 'FINANCIAMIENTO',
+            origin: 'HF',
+            bank: 'CETELEM',
+            years: 1,
+            auto: car,
+            vin: vin,
+            carYear: carYear,
+            receipt: 'DIR',
+            order: order,
+            salesman: salesman,
+            finalPrice: finalPriceM12,
+            expenditures: expenditures,
+
+            initialDate: new Date(m12Year, m12Month, m12Day),
+            initialDay: m12Day,
+            initialMonth: m12Month,
+            initialYear: m12Year,
+
+            collection_status: 5,
+        }
+        const m13policy = {
+            policyN: m13,
+            broker: broker,
+            insuranceCompany: selectedCompany,
+            name: customer,
+            operation: 'FINANCIAMIENTO',
+            origin: 'MUL',
+            bank: 'CETELEM',
+            years: term,
+            auto: car,
+            vin: vin,
+            carYear: carYear,
+            receipt: 'DIR',
+            order: order,
+            salesman: salesman,
+            finalPrice: finalPriceM13,
+            expenditures: expenditures,
+
+            initialDate: new Date(m12Year + 1, m12Month, m12Day),
+            initialDay: m12Day,
+            initialMonth: m12Month,
+            initialYear: m12Year,
+
+            collection_status: 5,
+        }
+        try{
+            await store.collection('policies').add(m12policy)
+            await store.collection('policies').add(m13policy)
+        } catch(e){
+            alert(e)
+        }
+    }
+
+    const validate = () => {
+        if(m12Day && m12Month && m12Year && m12 && m13 && salesman && selectedCompany && term && car && vin && carYear && order && finalPriceM12 && finalPriceM13 && expenditures){
+            savePolicy()
+        } else{
+            alert('Faltan datos de la póliza necesarios para guardar')
+        }
     }
 
     return (
@@ -115,6 +186,38 @@ const CetelemM12M13 = () => {
                     />
                 </div>
             </section>
+            <section className='cetelem-m12-price'>
+                <div>
+                    <p>
+                        PRIMA TOTAL M12
+                    </p>
+                    <input
+                        value={finalPriceM12 || 0}
+                        onChange={ e => setFinalPriceM12(parseInt(e.target.value))}
+                        type="text"
+                    />
+                </div>
+                <div>
+                    <p>
+                        PRIMA TOTAL M13
+                    </p>
+                    <input
+                        value={finalPriceM13 || 0}
+                        onChange={ e => setFinalPriceM13(parseInt(e.target.value))}
+                        type="text"
+                    />
+                </div>
+                <div>
+                    <p>
+                        GASTOS DE EXPEDICION
+                    </p>
+                    <input
+                        value={expenditures || 0}
+                        onChange={ e => setExpenditures(parseInt(e.target.value))}
+                        type="text" 
+                    />
+                </div>
+            </section>
             <section className='cetelem-m12-broker-company-selection'>
                 <div className='cetelem-m12-broker-selection'>
                     {
@@ -133,7 +236,7 @@ const CetelemM12M13 = () => {
                         :   
                         (
                             <div className='loader'>
-
+                                Cargando...
                             </div>
                         )
                     }
@@ -173,6 +276,15 @@ const CetelemM12M13 = () => {
                         onChange={ e => setOrder(e.target.value.toUpperCase().slice(0,8))}
                     />
                 </div>
+            </section>
+            <section className='cetelem-m12-customer'>
+                <p>
+                    Nombre del cliente                    
+                </p>
+                <input 
+                    type="text" 
+                    onChange={ e => setCustomer(e.target.value)}
+                />
             </section>
             <section className='cetelem-m12-salesman'>
                 <div className="cetelem-m12-salesman-input">
@@ -303,16 +415,6 @@ const CetelemM12M13 = () => {
                     )
                 }
             </section>
-            <section className='m12-price'>
-                <div className='m12-price-container'>
-                    <p>Precio M12</p>
-                    <input type='number'/>
-                </div>
-                <div className='m13-price-container'>
-                    <p>Precio M13</p>
-                    <input type='number'/>
-                </div>
-            </section>
             <section className='m12-date'>
                 <div className='m12-date-container'>
                     <p>Fecha de inicio M12</p>                       
@@ -377,10 +479,72 @@ const CetelemM12M13 = () => {
                             )
                         }
                     </div>
+                    <div className='m12-year-buttons'>
+                        <p>AÑO</p>
+                        {
+                            m12Year?
+                            (
+                                <div>
+                                    <button
+                                        className='m12-year-selected'
+                                        onClick={ e => setM12Year('')}
+                                    >
+                                        {m12Year}
+                                    </button>
+                                </div>
+                            )
+                            :
+                            (
+                                <div>
+                                    <button
+                                        onClick={ e => setM12Year(this_year)} 
+                                    >{this_year}</button>
+                                    <button
+                                        onClick={ e => setM12Year(this_year - 1)}
+                                    >{this_year - 1}</button>
+                                    <button
+                                        onClick={ e => setM12Year(this_year + 1)}
+                                    >{this_year + 1}</button>
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
                 <div className='m13-date-container'>
-                    <p>Fecha de inicio M13</p>
+                    <p>Vigencia M13</p>
+                    {
+                        m12Day && m12Year && term?
+                        (
+                            <div className='m13-date'>
+                                <p>DEL</p>
+                                <p className='m13-i'>{m12Day}/{months[m12Month]}/{m12Year + 1}</p>
+                                <p>AL</p>
+                                <p className='m13-i'>    {m12Day}/{months[m12Month]}/{m12Year + 1 + term}</p>
+                            </div>
+                        )
+                        :
+                        (
+                            <div className='m13-date-alert'>
+                                <h5>
+                                    Error
+                                </h5>
+                                <p>
+                                    Seleccione la fecha de inicio de m12 y plazo
+                                </p>
+                            </div>
+                        )
+                    }
                 </div>
+            </section>
+            <section 
+                className='m12-calls'
+            >
+                <button 
+                    className='save-button'
+                    onClick={e => validate()}
+                >
+                    GUARDAR POLIZAS
+                </button>
             </section>
         </div>
     )

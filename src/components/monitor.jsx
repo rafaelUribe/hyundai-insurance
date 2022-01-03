@@ -52,6 +52,9 @@ const Monitor = () => {
     //17
     const [auto, setAuto] = useState(null)
 
+
+    const [carY, setCarY] = useState(null)
+
     //18
     const [vin, setVin] = useState('')
 
@@ -274,6 +277,7 @@ const Monitor = () => {
             bank: bank,
             years: years,
             auto: auto,
+            carY: carY,
             vin: vin,
             order: order,
             salesman: salesman,
@@ -358,6 +362,7 @@ const Monitor = () => {
             setSalesman(pol.salesman)
             setAuto(pol.auto)
             setVin(pol.vin)
+            setCarY(pol.carY)
             setOrder(pol.order)
             setYears(pol.years)
             setFinalPrice(pol.finalPrice)
@@ -763,6 +768,14 @@ const Monitor = () => {
                                     type="text" 
                                     value={auto}
                                     onChange={ e => {setAuto(e.target.toUpperCase())}}
+                                />
+                            </div>
+                            <div className="add-policy-carYear">
+                                <p>AÑO</p>
+                                <input 
+                                    type="number" 
+                                    value={carY}
+                                    onChange={ e => {setCarY(e.target.value.toUpperCase())}}
                                 />
                             </div>
                             <div className="add-policy-vin">

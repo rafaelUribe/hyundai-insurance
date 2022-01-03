@@ -25,6 +25,11 @@ const AddPolicy = () => {
 
     const [auto, setAuto] = useState(null)
 
+    const cyear = new Date()
+    const cy = cyear.getFullYear()
+
+    const [carY, setCarY] = useState(cy + 1)
+
     const [vin, setVin] = useState('')
 
     const [policyN, setPolicyN] = useState('')
@@ -198,6 +203,7 @@ const AddPolicy = () => {
             bank: bank,
             years: years,
             auto: auto,
+            carY: carY,
             vin: vin,
             order: order,
             salesman: salesman,
@@ -571,6 +577,14 @@ const AddPolicy = () => {
                             type="text" 
                             value={auto}
                             onChange={ e => {setAuto(e.target.value.toUpperCase())}}
+                        />
+                    </div>
+                    <div className="add-policy-carYear">
+                        <p>AÑO</p>
+                        <input 
+                            type="number" 
+                            value={carY}
+                            onChange={ e => {setCarY(e.target.value.toUpperCase())}}
                         />
                     </div>
                     <div className="add-policy-vin">

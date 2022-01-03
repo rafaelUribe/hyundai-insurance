@@ -1,7 +1,19 @@
 .cetelem-mul{
     max-width: 600px;
     margin: 0 auto;
-    background-color: violet;
+}
+
+.cetelem-mul button{
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.cetelem-mul button:focus, .cetelem-mul button:hover{
+    box-shadow: 0px 8px 10px black;
+    cursor: pointer;
 }
 
 .cetelem-mul-title{
@@ -9,4 +21,28 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+}
+
+.cetelem-mul section{
+    /* border: 1px solid black; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cetelem-mul input{
+    width: 90%;
+    text-align: center;
+}
+
+.cetelem-mul .item-selected{
+    background-color: var(--dark-grey);
+    color: white;
+}
+
+.cetelem-mul .item-selected:focus, .cetelem-mul .item-selected:focus{
+    box-shadow: 0px 8px 10px black;
+    cursor: pointer;
+    border: 2px solid orange;
 }
